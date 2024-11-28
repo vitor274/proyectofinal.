@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Programacion III</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <style>
+        #misdatos {
+            text-align: left;
+            padding-bottom: 10px;
+        }
+
+        body {
+            background-color:rgb(170, 233, 233);
+        }
+		#botones {
+            text-align: center;
+            padding-bottom: 50px;
+			font-size: large;
+			color: rgb(212, 147, 87);
+			background-color: rgb(170, 233, 233);
+			margin: auto;
+
+
+		}
+		#TITULO {
+            text-align: center;
+            padding-bottom: 10px;
+		}
+	
+		#tabla {
+            text-align: center;
+            background-color: antiquewhite
+		}
+    </style>
+  </head>
+  <body>
+    <!-- Elementos de HTML-->
+    <div id="TITULO">
+        <h1> <strong>--Mi Musify--</strong> </h1>
+    </div>
+    <hr>
+
+    <div id="botones">
+        <button onclick="agregarcancion1()">Vino Tinto</button>
+		
+        <button onclick="agregarcancion2()">Pancake</button>
+		
+        <button onclick="agregarcancion3()">1-4-1</button>
+		
+        <button onclick="agregarcancion4()">Peligro</button>
+		
+        <button onclick="agregarcancion5()">Extssy Model</button>
+		
+        <button onclick="agregarcancion6()">Nueva Era</button>
+    </div>
+
+    <div class="container">
+        <table id="tabla" data-height="460" data-auto-refresh="true">
+            <thead>
+                <tr>
+                    <th data-field="Nombrecancion">Nombre de la Cancion</th>
+                    <th data-field="Nombredelartista">Artistas</th>
+                    <th data-field="Genero">Genero</th>
+                    <th data-field="Duraciondecancion">Duracion de la cancion</th>
+                    <th data-field="Imagendelartista">Imagen de la cancion</th>
+                    
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div id="misdatos">
+        <h2>Victor Aaron Rivas Ayala</h2>
+		<h2>victor.rivas2400@alumnos.udg.mx</h2>
+		<h2>Preparatoria: San Jose Del Valle</h2>
+		<h2>Programacion III</h2>
+		<h2>Profesor: ANGEL EMMANUEL SANCHEZ CUENCA</h2>
+		<h1> Copyright © Todos los derechos reservados</h1>
+
+
+
+
+
+    </div>
+  
+  </body>
+  <script>
+      	/* Javascript */   
+		$(function () {
+			$('#tabla').bootstrapTable({
+				data: datos,
+				formatNoMatches: function () {
+					return 'No se encontraron resultados'; // Mensaje si no hay resultados
+				}
+			});
+		});
+		
+		var datos = [];
+
+		function muestraDatos(){
+			$('#tabla').bootstrapTable('load', datos);
+		}
+
+		
+		function agregarcancion1() {
+			var Cancion1 = { 
+				Nombrecancion: "Vino Tinto",
+				Nombredelartista: "Peso pluma, Natanael Cano, Gabito Ballesteros",
+				Genero: "Corridos",
+				Duraciondecancion: "04:06 minutos",
+				Imagendelartista: '<img alt="" width="200" src="https://i.ytimg.com/vi/d8nLWwPPwp8/maxresdefault.jpg">'
+			};
+			datos.push(Cancion1);
+			muestraDatos();
+		}
+
+		
+		function agregarcancion2() {
+			var Cancion2 = {
+				Nombrecancion: "Pancake",
+				Nombredelartista: "Natanael Cano, Peso pluma",
+				Genero: "Corridos",
+				Duraciondecancion: "03:03 minutos",
+				Imagendelartista: '<img alt="" width="200" src="https://i.ytimg.com/vi/9YM63PmRTXE/sddefault.jpg">'
+			};
+			datos.push(Cancion2);
+			muestraDatos();
+		}
+
+		
+		function agregarcancion3() {
+			var Cancion3 = {
+				Nombrecancion: "1-4-1",
+				Nombredelartista: "Banda MS",
+				Genero: "Banda",
+				Duraciondecancion: "03:20 minutos",
+				Imagendelartista: '<img alt="" width="200" src="https://i.scdn.co/image/ab67616d0000b273491fb74313f7546f9cf7ed0c">'
+			};
+			datos.push(Cancion3);
+			muestraDatos();
+		}
+
+		
+		function agregarcancion4() {
+			var Cancion4 = {
+				Nombrecancion: "Peligro",
+				Nombredelartista: "Peso Pluma",
+				Genero: "Corrido",
+				Duraciondecancion: "03:00 minutos",
+				Imagendelartista: '<img alt="" width="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPqSlPBzLRrl7VEBOAbJY6sM8eKZK8z0sFbg&s">'
+			};
+			datos.push(Cancion4);
+			muestraDatos();
+		}
+
+		
+		function agregarcancion5() {
+			var Cancion5 = {
+				Nombrecancion: "Extssy Model",
+				Nombredelartista: "Junior H",
+				Genero: "Corridos",
+				Duraciondecancion: "04:01 minutos",
+				Imagendelartista: '<img alt="" width="200" src="https://i.scdn.co/image/ab67616d0000b273f0aa183c41ae765922dc9eb7">'
+			};
+			datos.push(Cancion5);
+			muestraDatos();
+		}
+
+		
+		function agregarcancion6() {
+			var Cancion6 = {
+				Nombrecancion: "Nueva Era",
+				Nombredelartista: "Duki, Myke Towers",
+				Genero: "Trap",
+				Duraciondecancion: "03:38 minutos",
+				Imagendelartista: '<img alt="" width="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTlAn5ubvRgsnXrKD8z6Z70BFqmW1VfNxtqw&s">'
+			};
+			datos.push(Cancion6);
+			muestraDatos();
+		}
+  </script>
+</html>
